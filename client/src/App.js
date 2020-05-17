@@ -22,12 +22,17 @@ const App = () => {
     })();
   }, []);
 
+  const showAddMarkerPopup = (e) => {
+    console.log(e)
+  }
+
   return (
     <ReactMapGL
       {...viewport}
       mapStyle="mapbox://styles/thecjreynolds/ck117fnjy0ff61cnsclwimyay"
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
+      onDblClick={showAddMarkerPopup}
     >
       {logEntries.map((entry) => (
         <>
@@ -39,7 +44,6 @@ const App = () => {
             <div
               onClick={() =>
                 setShowPopup({
-                  ...showPopup,
                   [entry._id]: true,
                 })
               }
@@ -61,17 +65,17 @@ const App = () => {
               longitude={entry.longitude}
               closeButton={true}
               closeOnClick={false}
-              onClose={() =>
-                setShowPopup({
-                  ...showPopup,
-                  [entry._id]: false,
-                })
-              }
+              dynamicPosition={false}
+              sortByDepth={true}
+              onClose={() => setShowPopup({})}
               anchor="top"
             >
               <div className="popup">
                 <h3>{entry.title}</h3>
                 <p>{entry.comments}</p>
+                <small>
+                  Visited On: {new Date(entry.visitDate).toLocaleDateString()}
+                </small>
               </div>
             </Popup>
           ) : null}
