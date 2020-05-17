@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 
 import { listLogEntries } from "./API";
+import  LogEntryForm  from "./LogEntryForm";
 
 const App = () => {
   const [logEntries, setLogEntries] = useState([]);
@@ -53,7 +54,7 @@ const App = () => {
                 })
               }
             >
-             <svg
+              <svg
                 className="marker yellow"
                 style={{
                   height: `${6 * viewport.zoom}px`,
@@ -141,7 +142,7 @@ const App = () => {
             anchor="top"
           >
             <div className="popup">
-              <h3>Add your new Log entry Here!</h3>
+              <LogEntryForm />
             </div>
           </Popup>
         </>
