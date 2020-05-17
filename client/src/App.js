@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 
 import { listLogEntries } from "./API";
-import  LogEntryForm  from "./LogEntryForm";
+import LogEntryForm from "./LogEntryForm";
 
 const App = () => {
   const [logEntries, setLogEntries] = useState([]);
@@ -142,7 +142,7 @@ const App = () => {
             anchor="top"
           >
             <div className="popup">
-              <LogEntryForm />
+              <LogEntryForm location={addEntryLocation} />
             </div>
           </Popup>
         </>
