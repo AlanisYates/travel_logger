@@ -24,3 +24,11 @@ export async function createLogEntry(entry) {
   error.response = json;
   throw error;
 }
+
+// "env": {
+//   "NODE_ENV": "production",
+//   "PORT": "1337",
+//   "DATABASE_URL": "@travel-log-db",
+//   "CORS_ORIGIN": "https://travel-log-ay-3w2bs9328.now.sh",
+//   "API_KEY": "@travel-log-api-key"
+// }
