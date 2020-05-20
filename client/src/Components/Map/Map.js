@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
-
-import { listLogEntries } from "./API";
-import LogEntryForm from "./LogEntryForm";
+import './map.css'
+import { listLogEntries } from "../../API";
+import LogEntryForm from "../../LogEntryForm";
 
 const Map = () => {
   const [logEntries, setLogEntries] = useState([]);
