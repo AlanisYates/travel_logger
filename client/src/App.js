@@ -20,12 +20,19 @@ const App = () => {
 
   return (
     <>
-      <div style={{ width: 256, position: "absolute", zIndex: 100 }}>
+      <div
+        style={{
+          width: 256,
+          position: "absolute",
+          zIndex: 100,
+          paddingLeft: "1rem",
+        }}
+      >
         <Button
           type="primary"
           onClick={() => setCollapsed(!collapsed)}
           style={{
-            marginBottom: 16,
+            marginBottom: 10,
           }}
         >
           {React.createElement(
@@ -40,7 +47,7 @@ const App = () => {
           inlineCollapsed={collapsed}
         >
           <Menu.Item key="1" icon={<PieChartOutlined />}>
-            Option 1
+            Option 1 yoo
           </Menu.Item>
           <Menu.Item key="2" icon={<DesktopOutlined />}>
             Option 2
@@ -68,7 +75,7 @@ const App = () => {
           </SubMenu>
         </Menu>
       </div>
-      <Map  />
+      <Map />
     </>
   );
 };
