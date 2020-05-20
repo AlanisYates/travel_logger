@@ -1,4 +1,6 @@
-const API_URL = window.location.hostname === 'localhost' ? "http://localhost:1337" : 'https://travel-log-ay-cehdmzibi.now.sh';
+
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:1337' : 'https://ay-travel-log-api.now.sh';
+
 
 export async function listLogEntries() {
   const response = await fetch(`${API_URL}/api/logs`);
@@ -24,11 +26,3 @@ export async function createLogEntry(entry) {
   error.response = json;
   throw error;
 }
-
-// "env": {
-//   "NODE_ENV": "production",
-//   "PORT": "1337",
-//   "DATABASE_URL": "@travel-log-db",
-//   "CORS_ORIGIN": "https://travel-log-ay-3w2bs9328.now.sh",
-//   "API_KEY": "@travel-log-api-key"
-// }
