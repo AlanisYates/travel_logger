@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <>
-      <div
+      {/* <div
         style={{
           width: 256,
           position: "absolute",
@@ -74,7 +74,7 @@ const App = () => {
             </SubMenu>
           </SubMenu>
         </Menu>
-      </div>
+      </div> */}
       <Map />
     </>
   );
